@@ -1,3 +1,8 @@
-html is here bitches!
+<h1>WORD COUNT</h1>
 
-{{ hithere }}
+<form action="{% url 'count' %}">
+    <textarea cols = "40" rows = "5" name = "fulltext">
+    </textarea>
+    <br />
+    <button>Count words</button>
+</form>

@@ -19,6 +19,8 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.home)
+    path('', views.home),
+    path('count/', views.count, name='count'),    #this name will be passed in the form action
+
 
 ]

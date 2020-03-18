@@ -3,7 +3,9 @@ from django.shortcuts import render
 
 
 def home(request):
-    return render(request, 'home.html',  {'hithere':'this is me'})
+    return render(request, 'home.html')
 # 	return HttpResponse("Hello world")
 
+def count(request):
+    return render(request, 'Count.html')
 
