@@ -1,2 +1,9 @@
 <h1>Count</h1>
-Hey fucker
+<h3>Full text: {{ fulltext }}</h3>
+<h2>There are {{ count }} words in your text.</h2>
+
+<h1>Word Count</h1>
+{% for word,counttotal in wordcount %}
+    {{ word }} : {{ counttotal }}
+    <br />
+{% endfor %}
