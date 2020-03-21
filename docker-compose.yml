@@ -1,0 +1,12 @@
+version: '3'
+services:
+  python:
+    # image: python:3.7.6
+    build:
+      context: .
+      dockerfile: ./docker/python/Dockerfile
+    volumes:
+      - ./wordCounterProject:/wordCounterProject
+    ports:
+      - 8000:8000
+    # command: cd /wordCounterProject && pip install -r requirements.txt && python manage.py runserver
