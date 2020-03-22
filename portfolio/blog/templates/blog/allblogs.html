@@ -62,7 +62,7 @@
         <a class="nav-link" href="#">LinkedIn</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link active" href="#">Blog</a>
       </li>
     </ul>
   </div>
@@ -70,41 +70,21 @@
 </header>
 
 <main role="main">
-
-  <section class="jumbotron text-center">
     <div class="container">
-      <h1>Hi, I am Rajneesh</h1>
-      <p class="lead text-muted">Hey I am Rajneesh, Junior Undergrad. in Computer Engineering at ZHCET, AMU.<br />
-          Full Stack Developer @HouseHelp.in and Joint Coordinator at @AMURoboclub<p>
-        <a href="mailto:rajneeshsharma@zhcet.ac.in" class="btn btn-primary my-2">Email me</a>
+    <h1 class="text-center pt-3">Welcome to my Blog</h1>
+    <br />
+    <h2>Latest Post</h2>
+    <hr />
 
-      </p>
+    {% for blog in blogs.all %}
+        <a href=""><h4>{{ blog.title }}</h4></a>
+        {{ blog.pub_date }}
+        <br />
+        <img class="img-fluid" src="{{ blog.image.url }}" alt="" height="200" width="250">
+        <br/ >
+        <p>{{ blog.body }}</p>
+    {% endfor %}
     </div>
-  </section>
-
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row">
-      {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-              <img class='card0img-top' src="{{ job.image.url }}" height/>
-              <div class="card-body">
-
-              <p class="card-text">{{ job.summary }}
-
-            </div>
-          </div>
-        </div>
-          {% endfor %}
-      </div>
-
-    </div>
-  </div>
-
-
-
 </main>
 
 <footer class="text-muted">
