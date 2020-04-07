@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+{% load embed_video_tags %}
+
+<!-- {% video item.video as my_video %}
+  URL: {{ my_video.url }}
+  Thumbnail: {{ my_video.thumbnail }}
+  Backend: {{ my_video.backend }} -->
+
+  {% video my_video "large" %}
+
+  <!-- {% endvideo %} -->
+
+
+{% video my_video '800x600' %}
+
+</body>
+</html>
+    abcd
+{% endblock %}

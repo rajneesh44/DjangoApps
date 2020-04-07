@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'embed_video',
+    'movie.apps.MovieConfig',
     'producsApp.apps.ProducsappConfig',
     'accounts.apps.AccountsConfig',
     'django.contrib.admin',
@@ -105,6 +107,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+EMBED_VIDEO_BACKENDS = (
+    'embed_video.backends.YoutubeBackend',
+    'embed_video.backends.VimeoBackend',
+    'embed_video.backends.SoundCloudBackend',
+)
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
