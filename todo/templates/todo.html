@@ -3,8 +3,15 @@
 <ul>
     {% for todoitem in allitems %}
         <li>{{ todoitem.content }}</li>
-    {% endfor %}
     
+    <form action="/deleteTodo/{{ todoitem.id }}/" method="post" style="display: inline;">
+        {% csrf_token %}
+        <input type="submit" value='delete' />
+    </form> 
+    
+    {% endfor %}
+
+
 </ul>
 <form action="/addTodo/" method="post">
         {% csrf_token %}

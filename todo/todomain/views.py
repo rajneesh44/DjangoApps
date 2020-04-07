@@ -12,3 +12,8 @@ def addTodo(request):
     new_item = TodoItems(content=request.POST['content'])
     new_item.save()
     return HttpResponseRedirect('/todo')
+
+def deleteTodo(request, todo_id):
+    itemDelete = TodoItems.objects.get(id=todo_id)
+    itemDelete.delete()
+    return HttpResponseRedirect('/todo/')
